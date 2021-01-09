@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/rm-training/webdev-2021/issues"
   },
-  "homepage": "https://github.com/rm-training/webdev-2021"
+  "homepage": "https://github.com/rm-training/webdev-2021",
+  "devDependencies": {
+    "json-server": "^0.16.3"
+  }
 }
