@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Discography App</title>
+    <meta charset="utf8" />
+    <link href="/vendor/semantic-ui/semantic.css" rel="stylesheet" type="text/css" />
+  </head>
+
+<head>
+  <title>Discography App</title>
+  <meta charset="utf8" />
+  <link href="/vendor/semantic-ui/semantic.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="ui container">
+    <!-- List of artists! -->
+    <artist-list>
+      <span class="ui item" slot="title">Artists</span>
+    </artist-list>
+
+    <!-- Write your templates here -->
+    <template id="artist-list-template">
+      <div class="ui segment">
+        <h1><slot name="title"></slot></h1>
+        <ul></ul>
+      </div>
+    </template>
+
+    <!-- Bring in our JavaScript files -->
+    <script src="../ajax/ajax.js"></script>
+    <script src="components/index.js"></script>
+</body>
+</html>
