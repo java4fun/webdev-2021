@@ -1,0 +1,26 @@
+{
+  "name": "webdev-2021",
+  "version": "0.0.1",
+  "description": "Training materials for learning CSS, HTML and JS",
+  "main": "www/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel src/babel --out-dir babel-out --presets=@babel/env",
+    "chat": "bin/chat-server.js",
+    "start": "bin/server.js"
+  },
+  "dependencies": {
+    "mockapie": "git://github.com/pjones/mockapie.git",
+    "ws": "^6.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rm-training/webdev-2021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rm-training/webdev-2021/issues"
+  },
+  "homepage": "https://github.com/rm-training/webdev-2021"
+}

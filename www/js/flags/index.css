@@ -1,0 +1,27 @@
+body{
+  font-size:.7em;
+}
+
+#bucket {
+  position:absolute;
+  top:5px;
+  right:5px;
+
+  width:20%;
+}
+
+#bucket a,
+#bucket div,
+#bucket ul * {
+  display:block;
+  color:red;
+}
+
+#bucket li, #bucket li * {
+  color: green;
+}
+
+#bucket li p {
+  margin: 0;
+  padding: 0;
+}
