@@ -5,29 +5,62 @@ Development course taught by [Ryan Morris][mrmorris].
 
 It is based off mixed course content originally authored by by [Peter J. Jones][pjones], [Ryan Morris][mrmorris] and [Joshua McNeese][jmcneese].
 
-Original source code for the course is located here: <https://github.com/devalot/webdev>
+## Pre-reqs before set up
 
-## Prerequisites
+1. Make sure you have [Node.js](https://nodejs.org/en/) `>=` 8
 
-This collection of exercises and demos needs [Node.js][] `>=` 8
-installed to work correctly.
+```
+node --version
+```
 
-## Starting Things Up
+2. You should have an IDE ready to roll. I'll be using [VS Code](https://code.visualstudio.com/) but you can use anything, even a simple text editor.
 
-1. Install dependencies
+3. Download this project follow the set up instructions below.
 
-   `npm install`
+If you have issues, reach out to the event organizor for help!
 
-2. Run the server (this is actually in the `./src` directory)
+## Set Up Instructions
 
+> Preferably try this out before class begins!
 
-    `npm start`
+1. Download this repository
+1. Install dependencies. You shouldn't see any errors - warnings are generally OK.
 
-3. Open the following URL in your browser of choice:
+```
+cd the-folder-you-cloned-into
+npm install
+```
 
-   <http://localhost:3000/>
+1. Run the web server
 
-[jmcneese]: https://github.com/jmcneese
-[mrmorris]: https://github.com/mrmorris
-[pjones]: http://www.devalot.com/about/pjones.html
-[node.js]: https://nodejs.org/
+```
+npm start
+```
+
+3. Visit your new local server and make sure it is running! You should see a welcome page.
+
+```
+http://localhost:3000/
+```
+
+## Websockets labs
+
+The project includes a websockets server alongside the typical web server. You can run both simultaneously with stmux:
+
+```
+npm run start:all
+```
+
+To exit stmux (kill your servers), type `ctrl+a` then press `k`.
+
+Or just run the websocket server standalone:
+
+```
+npm run chat
+```
+
+# Credits
+
+- [jmcneese](https://github.com/jmcneese)
+- [mrmorris](https://github.com/mrmorris)
+- [pjones](http://www.devalot.com/about/pjones.html)
