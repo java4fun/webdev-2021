@@ -16,10 +16,10 @@
 
       <tbody>
         <tr v-for="album in albums">
-          <td>{{album.name}}</td>
-          <td>{{album.released}}</td>
-          <td>{{album.label}}</td>
-          <td>{{album.asin}}
+          <td>{{ album.name }}</td>
+          <td>{{ album.released }}</td>
+          <td>{{ album.label }}</td>
+          <td>{{ album.asin }}</td>
         </tr>
       </tbody>
     </table>
@@ -28,39 +28,47 @@
 
 <script>
 export default {
-  name: 'albums',
+  name: "albums",
 
-  data () {
+  data() {
     return {
-      albums: []
-    }
+      albums: [],
+    };
   },
 
-  created () {
-    this.fetchData()
+  created() {
+    this.fetchData();
   },
 
   watch: {
-    '$route': 'fetchData'
+    $route: "fetchData",
   },
 
   methods: {
-    fetchData () {
-      var id = this.$route.params.artistID
-      var url = '/api/artists/' + id + '/albums'
+    fetchData() {
+      var id = this.$route.params.artistID;
+      var url = "/artists/" + id + "/albums";
 
-      this.$http.get(url)
-        .then(function (response) {
-          this.albums = response.data
-        })
-    }
-  }
-}
+      this.$http.get(url).then(function (response) {
+        this.albums = response.data;
+      });
+    },
+  },
+};
 </script>
 
 <style scoped>
-table { width: 100%; }
-thead tr { background-color: #eee; }
-thead th { text-align: left; }
-thead th, tbody td { padding: 0.5em; }
+table {
+  width: 100%;
+}
+thead tr {
+  background-color: #eee;
+}
+thead th {
+  text-align: left;
+}
+thead th,
+tbody td {
+  padding: 0.5em;
+}
 </style>

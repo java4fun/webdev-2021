@@ -9,7 +9,7 @@ export class ArtistService {
   constructor(private http: Http) { }
 
   fetchAll(): Promise<Artist[]> {
-    return this.http.get('/api/artists').
+    return this.http.get('/artists').
       toPromise().
       then(r => r.json() as Artist[]);
   }

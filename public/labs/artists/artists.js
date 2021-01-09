@@ -1,7 +1,7 @@
 // In the index.html file there is a button.  When the button is
 // clicked kick off an HTTP GET request to the following URL:
 //
-//   /api/artists
+//   /artists
 //
 // The response text will be a JSON-encoded array of objects.  Inspect
 // the response using the browser debugger and then insert the objects
@@ -24,7 +24,7 @@
 //
 // Clicking one of the <li> elements should display all information
 // about the clicked artist in the <ul> with the ID of "details".
-// (Hint: make another HTTP request to /api/artists/N where N is the
+// (Hint: make another HTTP request to /artists/N where N is the
 // artist ID.)
 //
 // BONUS #3:
@@ -32,7 +32,7 @@
 // After displaying a list of artist details, also display a list of
 // album names.  A list of albums can be fetched using the following
 // URL:
-//     /api/artists/N/albums
+//     /artists/N/albums
 //
 
 // your solution here

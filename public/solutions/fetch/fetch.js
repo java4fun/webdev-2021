@@ -14,9 +14,9 @@
 //   http://localhost:3000/js/fetch/
 //
 function getArtists(id) {
-  let path = '/api/artists';
+  let path = "/artists";
   if (id) {
-    path += '/' + id;
+    path += "/" + id;
   }
 
   // the "initial request" promise -- resolves to a Response object

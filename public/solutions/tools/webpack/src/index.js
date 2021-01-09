@@ -1,11 +1,11 @@
-import $ from '../../../lib/jquery';
+import $ from "../../../lib/jquery";
 
-$(function() {
+$(function () {
   async function load() {
-    let response = await fetch("/api/artists");
+    let response = await fetch("/artists");
     let json = await response.json();
-    let template = require('./template.html');
-    $("#view").html(template({artists: json}));
+    let template = require("./template.html");
+    $("#view").html(template({ artists: json }));
   }
 
   $("#load").click(load);

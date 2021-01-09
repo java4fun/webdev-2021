@@ -60,7 +60,7 @@ class ChatBox extends HTMLElement {
   renderFromStore() {
     let messageStorage = JSON.parse(localStorage.getItem("messages")) || [];
 
-    messageStorage.forEach(message => {
+    messageStorage.forEach((message) => {
       this.addMessage(message, false);
     });
   }
@@ -86,24 +86,24 @@ class ChatBox extends HTMLElement {
 
     const connection = new WebSocket("ws://" + host);
 
-    connection.addEventListener('open', () => {
+    connection.addEventListener("open", () => {
       console.log("connected");
 
       this.emptyMessages();
       this.renderFromStore();
     });
 
-    connection.addEventListener('message', message => {
+    connection.addEventListener("message", (message) => {
       const data = JSON.parse(message.data);
       this.addMessage(data);
     });
 
-    this.form.addEventListener("submit", e => {
+    this.form.addEventListener("submit", (e) => {
       e.preventDefault();
 
       const message = {
         user: user,
-        message: this.input.value
+        message: this.input.value,
       };
 
       const messageString = JSON.stringify(message);

@@ -12,7 +12,7 @@ class Artist implements ArtistFields {
   formation_year: number;
 
   static async fetchAll(): Promise<Artist[]> {
-    const records = await fetch("/api/artists").then(r => r.json());
+    const records = await fetch("/artists").then(r => r.json());
     return records.map((r: ArtistFields) => new Artist(r));
   }
 
@@ -26,7 +26,7 @@ class Artist implements ArtistFields {
   // There are two problems with this function
   // that TypeScript does not report!
   save(): Promise<Artist> {
-    return fetch(`/api/artists/${this.id}`,
+    return fetch(`/artists/${this.id}`,
                  { method: "PATCH",
                    body: JSON.stringify(this),
                  }).then(r => r.json());

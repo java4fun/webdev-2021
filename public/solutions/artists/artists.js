@@ -1,7 +1,7 @@
 // In the index.html file there is a button.  When the button is
 // clicked kick off an HTTP GET request to the following URL:
 //
-//   /api/artists
+//   /artists
 //
 // The response text will be a JSON-encoded array of objects.  Inspect
 // the response using the browser debugger and then insert the objects
@@ -23,7 +23,7 @@
 //
 // Clicking one of the <li> elements should display all information
 // about the clicked artist in the <ul> with the ID of "details".
-// (Hint: make another HTTP request to /api/artists/N where N is the
+// (Hint: make another HTTP request to /artists/N where N is the
 // artist ID.)
 //
 // BONUS #3:
@@ -31,14 +31,14 @@
 // After displaying a list of artist details, also display a list of
 // album names.  A list of albums can be fetched using the following
 // URL:
-//     /api/artists/N/albums
+//     /artists/N/albums
 //
 
 const button = document.querySelector("button");
 const artistList = document.getElementById("artists");
 const details = document.getElementById("details");
 
-button.addEventListener("click", function(e) {
+button.addEventListener("click", function (e) {
   const button = e.target;
 
   // Bonus #1
@@ -47,7 +47,7 @@ button.addEventListener("click", function(e) {
   // @todo - faking a delay...?
 
   let req = new XMLHttpRequest();
-  req.addEventListener("load", function(e) {
+  req.addEventListener("load", function (e) {
     // @todo - what about if the xhr request fails...?
     button.classList.remove("loading");
 
@@ -66,7 +66,7 @@ button.addEventListener("click", function(e) {
     }
   });
 
-  req.open("GET", "/api/artists");
+  req.open("GET", "/artists");
   req.send(null);
 });
 
@@ -74,7 +74,7 @@ function artistLiClickHandler(e) {
   let artistId = e.target.dataset.id;
 
   let req = new XMLHttpRequest();
-  req.addEventListener("load", function(e) {
+  req.addEventListener("load", function (e) {
     if (req.status == 200) {
       const artist = JSON.parse(req.responseText);
 
@@ -82,6 +82,6 @@ function artistLiClickHandler(e) {
     }
   });
 
-  req.open("GET", `/api/artists/${artistId}`);
+  req.open("GET", `/artists/${artistId}`);
   req.send(null);
 }

@@ -6,13 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel": "babel src/babel --out-dir babel-out --presets=@babel/env",
-    "chat": "bin/chat-server.js",
-    "start": "bin/server.js"
+    "start:chat": "node bin/chat-server.js",
+    "start:help": "bash --rcfile ./.bashrc && echo \"Run ctrl+a then k to exit\"",
+    "start:all": "stmux --mouse -w always -e ERROR -m beep,system -- [ [ \"npm start\" .. \"npm run start:chat\" ] : -s 1/6 -f \"npm run start:help\" ]",
+    "start": "json-server --watch data/db.json"
   },
-  "dependencies": {
-    "mockapie": "git://github.com/pjones/mockapie.git",
-    "ws": "^6.1.3"
-  },
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rm-training/webdev-2021.git"
@@ -24,6 +23,8 @@
   },
   "homepage": "https://github.com/rm-training/webdev-2021",
   "devDependencies": {
-    "json-server": "^0.16.3"
+    "json-server": "^0.16.3",
+    "stmux": "^1.8.1",
+    "ws": "^6.2.1"
   }
 }

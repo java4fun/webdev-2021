@@ -22,16 +22,16 @@ class ArtistList extends HTMLElement {
   // the name of the artist.
   connectedCallback() {
     const ul = this.shadowRoot.querySelector("ul");
-    fetch("/api/artists")
-      .then(response => {
+    fetch("/artists")
+      .then((response) => {
         if (response.ok) {
           return response.json();
         }
 
         throw new Error(response.statusText);
       })
-      .then(data => {
-        data.forEach(artist => {
+      .then((data) => {
+        data.forEach((artist) => {
           const li = document.createElement("li");
           const artistDetail = document.createElement("artist-detail");
 

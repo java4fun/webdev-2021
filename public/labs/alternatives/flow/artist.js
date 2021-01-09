@@ -1,8 +1,8 @@
 /* @flow */
 
 type ArtistFields = {
-  name: string;
-  website?: string;
+  name: string,
+  website?: string,
 };
 
 class Artist {
@@ -12,13 +12,13 @@ class Artist {
   static fetchAll(f: (artists: Array<Artist>) => void): void {
     let request = new XMLHttpRequest();
 
-    request.addEventListener("load", e => {
+    request.addEventListener("load", (e) => {
       if (request.status >= 200 && request.status < 300) {
-        f(JSON.parse(request.responseText).map(o => new Artist(o)));
+        f(JSON.parse(request.responseText).map((o) => new Artist(o)));
       }
     });
 
-    request.open("GET", "/api/artists");
+    request.open("GET", "/artists");
     request.send();
   }
 
@@ -33,7 +33,7 @@ declare class Mustache {
 }
 
 function render(artists: Array<Artist>): void {
-  let view = document.getElementById('view');
-  let tpl  = document.getElementById('artists').innerHTML;
-  view.innerHTML = Mustache.render(tpl, {artists: artists});
+  let view = document.getElementById("view");
+  let tpl = document.getElementById("artists").innerHTML;
+  view.innerHTML = Mustache.render(tpl, { artists: artists });
 }

@@ -1,22 +1,23 @@
-(function() {
-  let doRegistration = function() {
+(function () {
+  let doRegistration = function () {
     // <<: register
-    navigator.serviceWorker.register("worker.js")
-      .then(function(registration) {
+    navigator.serviceWorker
+      .register("worker.js")
+      .then(function (registration) {
         console.log("registration complete");
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log("ERROR: " + error);
       });
     // :>>
   };
 
-  let doFetch = function() {
-    fetch("/api/albums")
-      .then(function(response) {
+  let doFetch = function () {
+    fetch("/albums")
+      .then(function (response) {
         return response.json();
       })
-      .then(function(data) {
+      .then(function (data) {
         console.log("retrieved data: ", data);
       });
   };
@@ -28,16 +29,15 @@
     doRegistration();
 
     // Send pings on button click:
-    document.getElementById("ping").addEventListener("click", function() {
+    document.getElementById("ping").addEventListener("click", function () {
       console.log("sending ping to service worker");
       navigator.serviceWorker.controller.postMessage("ping");
     });
 
     // Make an XHR call on button click:
-    document.getElementById("fetch").addEventListener("click", function() {
+    document.getElementById("fetch").addEventListener("click", function () {
       doFetch();
     });
-
   } else {
     console.log("ERROR: service workers not supported");
   }

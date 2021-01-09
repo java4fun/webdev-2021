@@ -9,44 +9,45 @@
     <ul>
       <li v-for="artist in artists">
         <router-link v-bind:to="'/artists/' + artist.id + '/albums'">
-          <span class="name">{{artist.name}}</span>
-          ({{artist.formation_year}})
+          <span class="name">{{ artist.name }}</span>
+          ({{ artist.formation_year }})
         </router-link>
       </li>
     </ul>
 
-    <router-view/>
+    <router-view />
   </section>
 </template>
 
 <script>
 export default {
-  name: 'artists',
+  name: "artists",
 
   // Function to return component data.
-  data () {
+  data() {
     return {
-      artists: []
-    }
+      artists: [],
+    };
   },
 
   // Called when this component is created.
-  created () {
-    this.fetchData()
+  created() {
+    this.fetchData();
   },
 
   // Component methods.
   methods: {
-    fetchData () {
-      this.$http.get('/api/artists')
-        .then(function (response) {
-          this.artists = response.data
-        })
-    }
-  }
-}
+    fetchData() {
+      this.$http.get("/artists").then(function (response) {
+        this.artists = response.data;
+      });
+    },
+  },
+};
 </script>
 
 <style scoped>
-.name { font-size: 1.1em; }
+.name {
+  font-size: 1.1em;
+}
 </style>

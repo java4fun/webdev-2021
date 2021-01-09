@@ -1,5 +1,4 @@
 class ArtistDetail extends HTMLElement {
-
   // Exercise 3:
   //
   // Create a template for displaying a single artist.  The template
@@ -18,11 +17,10 @@ class ArtistDetail extends HTMLElement {
   //
   // Example URL for artist 2:
   //
-  //   /api/artists/2/albums
+  //   /artists/2/albums
   //
   // For an example, see: http://localhost:3000/js/demo/
-  connectedCallback() {
-  }
+  connectedCallback() {}
 }
 
 customElements.define("artist-detail", ArtistDetail);

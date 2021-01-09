@@ -1,14 +1,14 @@
-$(function() {
+$(function () {
   /****************************************************************************/
   function load() {
     // <<: ajax
-    $.getJSON("/api/artists")
-      .then(function(artists) {
+    $.getJSON("/artists")
+      .then(function (artists) {
         var template = $("#template").html();
-        var view = Mustache.render(template, {artists: artists});
+        var view = Mustache.render(template, { artists: artists });
         $("#view").html(view);
       })
-      .fail(function(error) {
+      .fail(function (error) {
         console.error("bloody hell: ", error);
       });
     // :>>
@@ -23,7 +23,7 @@ $(function() {
     ];
 
     // <<: create
-    artists.forEach(function(a) {
+    artists.forEach(function (a) {
       $("<li>").text(a).appendTo("#view ul");
     });
     // :>>
@@ -31,12 +31,12 @@ $(function() {
 
   /****************************************************************************/
   function logger() {
-    var what = {childList: true};
+    var what = { childList: true };
     var view = document.getElementById("view");
 
-    var observer = new MutationObserver(function() {
+    var observer = new MutationObserver(function () {
       // <<: fetch
-      $("#view li").each(function() {
+      $("#view li").each(function () {
         console.log($(this).text());
       });
       // :>>
@@ -47,11 +47,11 @@ $(function() {
 
   /****************************************************************************/
   // <<: events
-  $("#view").click(function(event) {
+  $("#view").click(function (event) {
     console.log(event.target, "was clicked");
   });
 
-  $("#reload").on("click", function(event) {
+  $("#reload").on("click", function (event) {
     $("#view").html("");
     load();
   });

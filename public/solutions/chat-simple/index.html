@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Chat Simple</title>
-    <meta charset="utf8" />
-    <link href="/vendor/semantic-ui/semantic.css" rel="stylesheet" type="text/css" />
 
-    <style type="text/css">
-      #messages {
-        margin: 1rem 0;
-        padding: 0.5rem;
-        background-color: #ececec;
-      }
+<head>
+  <title>Chat Simple</title>
+  <meta charset="utf8" />
+  <link href="/vendor/semantic-ui/semantic.css" rel="stylesheet" type="text/css" />
 
-      #messages ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
+  <style type="text/css">
+    #messages {
+      margin: 1rem 0;
+      padding: 0.5rem;
+      background-color: #ececec;
+    }
 
-      #messages li {
-        background-color: #fff;
-        display: block;
-        border: 1px solid #c9c9c9;
-        padding: 1rem;
-        margin: 0 0 0.5rem 0;
-      }
-    </style>
-  </head>
+    #messages ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-  <body class="ui container">
-    <h1>Chat Simple</h1>
+    #messages li {
+      background-color: #fff;
+      display: block;
+      border: 1px solid #c9c9c9;
+      padding: 1rem;
+      margin: 0 0 0.5rem 0;
+    }
+  </style>
+</head>
 
-    <form class="ui form">
-      <div class="ui input">
-        <input type="text" name="message" placeholder="Insert a message" />
-      </div>
-      <input class="ui primary button" type="submit" />
-    </form>
-    <div id="messages" class="ui comments">
-      <div class="comment">
+<body class="ui container">
+  <h1>Chat Simple</h1>
+
+  <form class="ui form">
+    <div class="ui input">
+      <input type="text" name="message" placeholder="Insert a message" />
+    </div>
+    <input class="ui primary button" type="submit" />
+  </form>
+  <div id="messages" class="ui comments">
+    <ul>
+      <li class="ui comment">
         <div class="content">
           <a class="author">Matt</a>
           <div class="metadata">
@@ -48,10 +50,12 @@
             How artistic!
           </div>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
+  </div>
 
-    <!-- Bring in our JavaScript files -->
-    <script src="./index.js"></script>
-  </body>
+  <!-- Bring in our JavaScript files -->
+  <script src="./index.js"></script>
+</body>
+
 </html>
