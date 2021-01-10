@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Modern Web Development - HTML, CSS and JavaScript</title>
+    <meta charset="utf8" />
+    <link href="/vendor/semantic-ui/semantic.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ui container">
+    <h1 class=" ui header">Health Check</h1>
+
+    <div class="ui message success">
+        <h2><i class="ui check icon"></i>Site is up and running</h2>
+    </div>
+
+    <div class="ui message warning">
+        <h2><i class="ui clock outline icon"></i>Making a fetch request</h2>
+    </div>
+
+    <script>
+        fetch('/artists').then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+        }).then((data) => {
+            if (data.length > 0) {
+                const messageEl = document.querySelector('.message.warning');
+                messageEl.classList.remove('warning');
+                messageEl.classList.add('success');
+                messageEl.innerHTML = '<h2><i class="ui icon check"></i> Making a fetch request</h2>';
+            }
+        });
+    </script>
+</body>

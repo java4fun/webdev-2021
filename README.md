@@ -5,7 +5,9 @@ Development course taught by [Ryan Morris][mrmorris].
 
 It is based off mixed course content originally authored by by [Peter J. Jones][pjones], [Ryan Morris][mrmorris] and [Joshua McNeese][jmcneese].
 
-## Pre-reqs before set up
+Please do ensure you have the **Pre-reqs** nad have followed the **set up instructions** prior to the start of class.
+
+## Do this before day 1 of the class:
 
 1. Make sure you have [Node.js](https://nodejs.org/en/) `>=` 8
 
@@ -13,41 +15,52 @@ It is based off mixed course content originally authored by by [Peter J. Jones][
 node --version
 ```
 
-2. You should have an IDE ready to roll. I'll be using [VS Code](https://code.visualstudio.com/) but you can use anything, even a simple text editor.
+2. Have an IDE ready to roll. I'll be using [VS Code](https://code.visualstudio.com/) but you can use anything, even a simple text editor.
 
-3. Download this project follow the set up instructions below.
-
-If you have issues, reach out to the event organizor for help!
+3. Follow the set up instructions below. Get it running!
 
 ## Set Up Instructions
 
-> Preferably try this out before class begins!
+> Preferably do this before class begins!
 
 1. Download this repository
 1. Install dependencies. You shouldn't see any errors - warnings are generally OK.
 
-```
-cd the-folder-you-cloned-into
+```bash
+cd the-folder-you-cloned-or-unzipped-into
 npm install
 ```
 
 1. Run the web server
 
-```
+```bash
 npm start
 ```
 
-3. Visit your new local server and make sure it is running! You should see a welcome page.
+3. [Visit](http://localhost:3000/health.html) your new local server in your browser and make sure it is running! You should see a welcome page.
 
-```
+```bash
+http://localhost:3000/health.html
+
+# or the front page of the class:
 http://localhost:3000/
 ```
 
+**_That's it!_** -- you're ready for class.
+
+If you have any problems, please open an issue in this project with details like: operating system, node version, steps you took, any error output you're seeing.
+
+If needed, dit the `json-server.json` file to customzie the port setting.
+
+---
+
 ## Websockets labs
+
+> You don't need to do this before class...
 
 The project includes a websockets server alongside the typical web server. You can run both simultaneously with stmux:
 
-```
+```bash
 npm run start:all
 ```
 
@@ -55,7 +68,7 @@ To exit stmux (kill your servers), type `ctrl+a` then press `k`.
 
 Or just run the websocket server standalone:
 
-```
+```bash
 npm run chat
 ```
 
