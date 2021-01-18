@@ -9,7 +9,7 @@ Please do ensure you have the **Pre-reqs** nad have followed the **set up instru
 
 ## Do this before day 1 of the class:
 
-1. Make sure you have [Node.js](https://nodejs.org/en/) `>=` 8
+1. Make sure you have [Node.js](https://nodejs.org/en/) `>=` 10
 
 ```
 node --version
