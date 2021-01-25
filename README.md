@@ -64,12 +64,14 @@ The project includes a websockets server alongside the typical web server. You c
 npm run start:all
 ```
 
-To exit stmux (kill your servers), type `ctrl+a` then press `k`.
+To exit stmux, type `ctrl+a` then press `k`.
+
+---
 
 Or just run the websocket server standalone:
 
 ```bash
-npm run chat
+npm run start:chat
 ```
 
 # Credits

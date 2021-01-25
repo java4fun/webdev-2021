@@ -8,7 +8,7 @@
     "babel": "babel src/babel --out-dir babel-out --presets=@babel/env",
     "start:chat": "node bin/chat-server.js",
     "start:help": "bash --rcfile ./.bashrc && echo \"Run ctrl+a then k to exit\"",
-    "start:all": "stmux --mouse -w always -e ERROR -m beep,system -- [ [ \"npm start\" .. \"npm run start:chat\" ] : -s 1/6 -f \"npm run start:help\" ]",
+    "start:all": "stmux --mouse -w always -e ERROR -m beep,system -- [ [ \"npm start\" .. \"npm run start:chat\" ] ]",
     "start": "json-server --watch data/db.json"
   },
   "engines": {
