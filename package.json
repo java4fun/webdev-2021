@@ -11,6 +11,10 @@
     "start:all": "stmux --mouse -w always -e ERROR -m beep,system -- [ [ \"npm start\" .. \"npm run start:chat\" ] : -s 1/6 -f \"npm run start:help\" ]",
     "start": "json-server --watch data/db.json"
   },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
   "dependencies": {},
   "repository": {
     "type": "git",
