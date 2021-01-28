@@ -22,8 +22,4 @@
 //   setTemp(10);
 //   history(); // 10, 5
 //
-function closure() {
-
-  // Your code here.
-
-}
+function closure() {}

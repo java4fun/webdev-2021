@@ -25,14 +25,14 @@ wss.broadcast = function broadcast(data) {
   });
 };
 
-wss.on("connection", ws => {
-  ws.on("message", message => {
+wss.on("connection", (ws) => {
+  ws.on("message", (message) => {
     console.log("ws received: %s", message);
 
     // send to the sender
-    //ws.send(message);
+    ws.send(message);
 
-    wss.clients.forEach(client => {
+    wss.clients.forEach((client) => {
       if (client !== ws && client.readyState === WebSocket.OPEN) {
         client.send(message);
       }
@@ -42,7 +42,7 @@ wss.on("connection", ws => {
   ws.send(
     JSON.stringify({
       user: "root",
-      message: "---Welcome---"
+      message: "---Welcome---",
     })
   );
 });

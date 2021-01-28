@@ -5,7 +5,7 @@
  * Resist the urge to jump ahead and attempt to encapsulate or modularize this code...
  * Create functions and variables in the global scope... you should not need to write a single {} object
  *
- * Implement two functions that share access to the same variable(s)
+ * Create two functions that share access to the same variable(s)
  *
  * promptUserForName()
  *
@@ -24,4 +24,23 @@
  * Bonus:
  * How can I lock things down so another part of my app can't overwrite all these variables? (You can use objects now)
  *
+ *
  */
+let callCount = 0;
+let name;
+
+function promptUserForName() {
+  callCount++;
+
+  if (callCount > 1) {
+    return;
+  }
+
+  name = prompt("What is your name?");
+}
+
+function getCurrentName() {
+  alert(`The last name was: ${name}`);
+}
+
+promptUserForName();

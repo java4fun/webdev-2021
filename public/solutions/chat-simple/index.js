@@ -23,7 +23,7 @@ class MessageSystem {
     let messageStorage = JSON.parse(localStorage.getItem("messages")) || [];
 
     messageStorage.forEach((message) => {
-      this.addMessage(message, false);
+      //this.addMessage(message, false);
     });
   }
 
@@ -36,14 +36,15 @@ class MessageSystem {
     this.messagesUl.append(newMessageLi);
   }
 
-  constructor(host, user) {
+  constructor(host) {
     const connection = new WebSocket("ws://" + host);
 
     // form
     this.form = document.querySelector("form");
 
     // input
-    this.input = this.form.querySelector("input");
+    this.input = this.form.querySelector("input[name=message]");
+    this.nameInput = this.form.querySelector("input[name=name]");
 
     // message list
     this.messagesUl = document.querySelector("#messages ul");
@@ -65,7 +66,7 @@ class MessageSystem {
       e.preventDefault();
 
       const message = {
-        user: user,
+        user: this.nameInput.value,
         message: this.input.value,
       };
 
@@ -73,11 +74,16 @@ class MessageSystem {
 
       connection.send(messageString);
 
-      this.addMessage(message);
+      //this.addMessage(message);
 
       this.input.value = "";
     });
   }
 }
 
-const messages = new MessageSystem("localhost:3030", "Ryan");
+const messages = new MessageSystem("localhost:3030");
+
+// const messages = new MessageSystem(
+//   "happy-family-chat-time.herokuapp.com/?token=woops",
+//   "Ryan"
+// );

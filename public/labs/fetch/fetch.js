@@ -9,12 +9,12 @@
 // Your function should fetch the JSON payload from the server,
 // returning a Promise that resolves to the deserialized JSON data.
 //
+// The API is available at http://localhost:3000/artists
+//
 // To run your tests or debug, start your server and go to:
 //
-//   http://localhost:3000/js/fetch/
+//   http://localhost:3000/labs/fetch/
 //
 function getArtists(id) {
-
   // Your code goes here.
-
 }
