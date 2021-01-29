@@ -59,7 +59,8 @@ class MessageSystem {
 
     connection.addEventListener("message", (e) => {
       const data = JSON.parse(e.data);
-      this.addMessage(data);
+      console.log(data);
+      //this.addMessage(data);
     });
 
     this.form.addEventListener("submit", (e) => {
@@ -81,9 +82,9 @@ class MessageSystem {
   }
 }
 
-const messages = new MessageSystem("localhost:3030");
+//const messages = new MessageSystem("localhost:3030");
 
-// const messages = new MessageSystem(
-//   "happy-family-chat-time.herokuapp.com/?token=woops",
-//   "Ryan"
-// );
+const messages = new MessageSystem(
+  "happy-family-chat-time.herokuapp.com/?token=woops",
+  "Ryan"
+);

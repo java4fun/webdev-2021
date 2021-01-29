@@ -12,17 +12,27 @@
 
   <h2>Rainbow buttons...</h2>
 
-  <rainbow-button>Click me!</rainbow-button>
+  <rainbow-button>
+    This is my fallback content...
+  </rainbow-button>
 
   <script>
+    // your class needs to extend HTMLElement
     class RainbowButton extends HTMLElement {
       constructor() {
+        // super() should come first
         super();
+
         const originalTextContent = this.textContent;
         this.textContent = `🌈${originalTextContent}🌈`;
+
+        this.addEventListener('click', () => {
+          console.log('Hello world!');
+        });
       }
     }
 
+    // tags must have a "hyphen"
     customElements.define('rainbow-button', RainbowButton);
   </script>
 

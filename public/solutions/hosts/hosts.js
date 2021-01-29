@@ -1,13 +1,17 @@
+"use strict";
+
 const Hosts = (function () {
   let hosts = {};
 
+  function add(name, address) {
+    if (!hosts.hasOwnProperty(name)) {
+      hosts[name] = [];
+    }
+    hosts[name].push(address);
+  }
+
   return {
-    add(name, address) {
-      if (!hosts.hasOwnProperty(name)) {
-        hosts[name] = [];
-      }
-      hosts[name].push(address);
-    },
+    add,
     lookupByName(name) {
       if (hosts.hasOwnProperty(name)) {
         return hosts[name];
@@ -25,6 +29,9 @@ const Hosts = (function () {
     },
     clear() {
       hosts = {};
+    },
+    get length() {
+      return Object.getOwnPropertyNames(hosts).length;
     },
   };
 })();
