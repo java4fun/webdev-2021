@@ -6,7 +6,6 @@
  *
  * Data format:
   {
-    id: <some unique identifier>
 		user: 'root',
 		message: '---Welcome---'
 	}

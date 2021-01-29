@@ -53,4 +53,4 @@
  *
  * Make sure your tests still pass.
  */
-const Hosts = (function () {})();
+const Hosts = undefined;

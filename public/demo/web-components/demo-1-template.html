@@ -12,7 +12,7 @@
 
   <h2>Rainbow buttons...</h2>
 
-  <rainbow-button bg-color="red">
+  <rainbow-button>
     <!-- this element will be slotted - it remains in the light dom -->
     <span id="slotted-element" slot="label">Click me!</span>
   </rainbow-button>
@@ -41,7 +41,6 @@
     // it is a live link!
 
     const rainbowButton = document.querySelector('rainbow-button');
-    rainbowButton.setAttribute('bg-color', 'blue');
 
   </script>
 
