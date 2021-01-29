@@ -25,6 +25,8 @@
 function closure() {
   let temps = [];
 
+  // question: what if I used `this` and set `temps` on the object?
+
   return {
     // setTemp: function (temp) {}
     setTemp(temp) {
@@ -40,6 +42,6 @@ function closure() {
       for (let i = temps.length; i--; i >= 0) {
         console.log(temps[i]);
       }
-    }
+    },
   };
 }

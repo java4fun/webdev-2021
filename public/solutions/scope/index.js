@@ -26,21 +26,30 @@
  *
  *
  */
-let callCount = 0;
-let name;
+function MyModule() {
+  let callCount = 0;
+  let name;
 
-function promptUserForName() {
-  callCount++;
+  function promptUserForName() {
+    callCount++;
 
-  if (callCount > 1) {
-    return;
+    if (callCount > 1) {
+      return;
+    }
+
+    name = prompt("What is your name?");
   }
 
-  name = prompt("What is your name?");
+  function getCurrentName() {
+    alert(`The last name was: ${name}`);
+  }
+
+  promptUserForName();
+
+  return {
+    promptUserForName,
+    getCurrentName,
+  };
 }
 
-function getCurrentName() {
-  alert(`The last name was: ${name}`);
-}
-
-promptUserForName();
+const myModuleMethods = MyModule();

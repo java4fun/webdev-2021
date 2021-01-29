@@ -23,12 +23,11 @@
   </template>
 
   <script type="text/javascript">
-
     class RainbowButton extends HTMLElement {
       constructor() {
         super();
         this.attachShadow({ mode: 'open' });
-
+        // this.getAttribute('bg-color');
         const el = document.getElementById('rainbow-button-template');
 
         this.shadowRoot.appendChild(el.content.cloneNode(true));
@@ -40,6 +39,8 @@
     // you can select the "slotted" element in the light dom
     const slotted = document.getElementById('slotted-element');
     // it is a live link!
+
+    const rainbowButton = document.querySelector('rainbow-button');
 
   </script>
 

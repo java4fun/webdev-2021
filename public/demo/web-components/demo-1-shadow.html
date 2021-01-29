@@ -22,11 +22,15 @@
         const originalTextContent = this.textContent;
 
         // Switching it up for a Shadow DOM
-        this.attachShadow({mode: 'open'});
+        this.attachShadow({ mode: 'open' });
 
         const el = document.createElement('p');
         el.textContent = `🌈 ${originalTextContent}🌈 `;
         this.shadowRoot.appendChild(el);
+
+        el.addEventListener('click', (e) => {
+          console.log('Hello world!');
+        });
       }
     }
 

@@ -17,7 +17,7 @@ const Ajax = (function () {
   let raw = async function (url, method, data) {
     const options = {
       method: method.toUpperCase(),
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     };
 
     // without async/await
@@ -26,27 +26,28 @@ const Ajax = (function () {
     // });
 
     const response = await fetch(url, options);
+
     return response.json();
   };
 
   // HTTP GET (Fetch resource).
   let get = function (url) {
-    return raw(url, 'GET');
+    return raw(url, "GET");
   };
 
   // HTTP POST (Create new resource).
   let post = function (url, data) {
-    return raw(url, 'POST', data);
+    return raw(url, "POST", data);
   };
 
   // HTTP PATCH (Update existing resource).
   let patch = function (url, data) {
-    return raw(url, 'PATCH', data);
+    return raw(url, "PATCH", data);
   };
 
   // HTTP DELETE (Delete existing resource).
   let del = function (url) {
-    return raw(url, 'DELETE');
+    return raw(url, "DELETE");
   };
 
   // Return the public interface.

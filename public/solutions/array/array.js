@@ -8,7 +8,7 @@ let users = [
   { id: 1, username: "caiva", age: 30 },
   { id: 2, username: "ahxae", age: 17 },
   { id: 3, username: "i4tie", age: 42 },
-  { id: 4, username: "bvu7F", age: 19 }
+  { id: 4, username: "bvu7F", age: 19 },
 ];
 
 /****************************************************************************/
@@ -17,18 +17,18 @@ let users = [
 // The function below should return an array of users from the TEST
 // DATA above that only includes users under the age of 18.
 function exercise1() {
-  let underAgeUsers = [];
+  // let underAgeUsers = [];
 
-  for (let i = 0; i < users.length; i++) {
-    if (users[i].age < 18) {
-      underAgeUsers.push(users[i]);
-    }
-  }
+  // for (let i = 0; i < users.length; i++) {
+  //   if (users[i].age < 18) {
+  //     underAgeUsers.push(users[i]);
+  //   }
+  // }
 
   // could also use ES5+ Array#filter
-  /*underAgeUsers = users.filter(function (val, index) {
+  underAgeUsers = users.filter(function (val) {
     return val.age < 18;
-  });/**/
+  }); /**/
 
   return underAgeUsers;
 }
@@ -40,7 +40,7 @@ function exercise1() {
 // should be all of the usernames from the TEST DATA above, in the
 // same order.
 function exercise2() {
-  return users.map(function(val) {
+  return users.map(function (val) {
     return val.username;
   });
 }
@@ -53,21 +53,23 @@ function exercise2() {
 // `toString()` method) from the TEST DATA above where the user is
 // over the age of 20 and younger than 40.
 function exercise3() {
-  const usernames = [];
-  for (let i = 0; i < users.length; i++) {
-    if (users[i].age > 20 && users[i].age < 40) {
-      usernames.push(users[i].id.toString());
-    }
-  }
-  return usernames;
+  // const usernames = [];
+  // for (let i = 0; i < users.length; i++) {
+  //   if (users[i].age > 20 && users[i].age < 40) {
+  //     usernames.push(users[i].id.toString());
+  //   }
+  // }
+  // return usernames;
 
-  // return users
-  //   .filter(function (val) {
-  //     return val.age < 40 && val.age > 20;
-  //   })
-  //   .map(function (val) {
-  //     return val.id.toString();
-  //   });
+  const isAgeOk = function (val) {
+    return val.age < 40 && val.age > 20;
+  };
+
+  const mapToIds = function (val) {
+    return val.id.toString();
+  };
+
+  return users.filter(isAgeOk).map(mapToIds);
 }
 
 /****************************************************************************/
@@ -76,11 +78,20 @@ function exercise3() {
 // The function below should return the `users' array from above (TEST
 // DATA) in reverse order.  Do not use the built-in reverse function.
 function exercise4() {
-  const reversedArray = [];
-  for (let i = 0; i < users.length; i++) {
-    reversedArray.unshift(users[i]);
-  }
-  return reversedArray;
+  // const reversedArray = [];
+  // for (let i = 0; i < users.length; i++) {
+  //   reversedArray.unshift(users[i]);
+  // }
+  // return reversedArray;
+
+  const reversedTwo = users.reduceRight((prevArray, currentValue) => {
+    return [...prevArray, currentValue];
+  }, []);
+  return reversedTwo;
+
+  const brandNewUsersArray = users.map((user, index) => {
+    return users[users.length - index - 1];
+  });
 
   // or...
   //return users.slice().reverse();

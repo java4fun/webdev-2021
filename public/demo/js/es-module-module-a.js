@@ -1,5 +1,7 @@
 let counter = 0;
 
+console.log("Module A");
+
 const increment = () => {
   counter++;
 };

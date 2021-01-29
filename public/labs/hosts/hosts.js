@@ -53,4 +53,4 @@
  *
  * Make sure your tests still pass.
  */
-Hosts = undefined;
+const Hosts = undefined;

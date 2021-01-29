@@ -1,15 +1,15 @@
-describe("Constructor Functions Exercise", function() {
-  it("Should provide a Calculator function", function() {
+describe("Constructor Functions Exercise", function () {
+  it("Should provide a Calculator function", function () {
     expect(typeof Calculator).toBe("function");
   });
 
-  it("Should have prototype functions", function() {
+  it("Should have prototype functions", function () {
     expect(typeof Calculator.prototype.add).toBe("function");
     expect(typeof Calculator.prototype.mul).toBe("function");
     expect(typeof Calculator.prototype.get).toBe("function");
   });
 
-  it("Should default the initial value to zero", function() {
+  it("Should default the initial value to zero", function () {
     let c1 = new Calculator(10);
     expect(c1.get()).toBe(10);
 
@@ -17,7 +17,7 @@ describe("Constructor Functions Exercise", function() {
     expect(c2.get()).toBe(0);
   });
 
-  it("Should add and multiply numbers", function() {
+  it("Should add and multiply numbers", function () {
     let c = new Calculator(10);
 
     c.push(5);
@@ -29,7 +29,15 @@ describe("Constructor Functions Exercise", function() {
     expect(c.get()).toBe(30);
   });
 
-  it("Should support unique objects", function() {
+  it("Should add the numbers before it multiplies", function () {
+    let d = new Calculator(10);
+    d.push(2);
+    d.push(3);
+    d.mul();
+    expect(d.get()).toBe(50);
+  });
+
+  it("Should support unique objects", function () {
     let c1 = new Calculator(10);
     let c2 = new Calculator(5);
 
@@ -42,7 +50,7 @@ describe("Constructor Functions Exercise", function() {
     expect(c2.get()).toBe(6);
   });
 
-  it("Should be able to run example code", function() {
+  it("Should be able to run example code", function () {
     let c = new Calculator(5);
     c.push(5);
     c.push(10);
