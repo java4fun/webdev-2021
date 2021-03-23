@@ -4,7 +4,7 @@
   "description": "Training materials for learning CSS, HTML and JS",
   "main": "www/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "babel": "babel src/babel --out-dir babel-out --presets=@babel/env",
     "start:chat": "node bin/chat-server.js",
     "start:help": "bash --rcfile ./.bashrc && echo \"Run ctrl+a then k to exit\"",
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/rm-training/webdev-2021",
   "devDependencies": {
     "eslint": "^7.18.0",
+    "jest": "^26.6.3",
     "json-server": "^0.16.3",
     "stmux": "^1.8.1",
     "ws": "^6.2.1"
