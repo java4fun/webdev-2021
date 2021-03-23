@@ -50,7 +50,7 @@ http://localhost:3000/
 
 If you have any problems, please open an issue in this project with details like: operating system, node version, steps you took, any error output you're seeing.
 
-If needed, dit the `json-server.json` file to customzie the port setting.
+If needed, edit the `json-server.json` file to customzie the `port` setting.
 
 ---
 

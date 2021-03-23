@@ -21,7 +21,4 @@
  * - It should use the built-in `alert` function to "echo" the latest name the user provided
  *     https://developer.mozilla.org/en-US/docs/Web/API/Window/alert
  *
- * Bonus:
- * How can I lock things down so another part of my app can't overwrite all these variables? (You can use objects now)
- *
  */
