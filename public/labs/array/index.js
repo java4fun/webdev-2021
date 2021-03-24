@@ -4,11 +4,11 @@
 
 /****************************************************************************/
 // TEST DATA:
-const users = [
-  {id: 1, username: "caiva", age: 30},
-  {id: 2, username: "ahxae", age: 17},
-  {id: 3, username: "i4tie", age: 42},
-  {id: 4, username: "bvu7F", age: 19},
+let users = [
+  { id: 1, username: "caiva", age: 30 },
+  { id: 2, username: "ahxae", age: 17 },
+  { id: 3, username: "i4tie", age: 42 },
+  { id: 4, username: "bvu7F", age: 19 },
 ];
 
 /****************************************************************************/
@@ -16,11 +16,7 @@ const users = [
 //
 // The function below should return an array of users from the TEST
 // DATA above that only includes users under the age of 18.
-function exercise1() {
-
-  // Your code here.
-
-}
+function exercise1() {}
 
 /****************************************************************************/
 // EXERCISE 2:
@@ -28,11 +24,7 @@ function exercise1() {
 // The function below should return an array of strings.  The strings
 // should be all of the usernames from the TEST DATA above, in the
 // same order.
-function exercise2() {
-
-  // Your code here.
-
-}
+function exercise2() {}
 
 /****************************************************************************/
 // (BONUS) EXERCISE 3:
@@ -41,19 +33,13 @@ function exercise2() {
 // should be all of the numeric IDs (converted into a string via the
 // `toString()` method) from the TEST DATA above where the user is
 // over the age of 20 and younger than 40.
-function exercise3() {
-
-  // Your code here.
-
-}
+function exercise3() {}
 
 /****************************************************************************/
 // (BONUS) EXERCISE 4:
 //
 // The function below should return the `users' array from above (TEST
 // DATA) in reverse order.  Do not use the built-in reverse function.
-function exercise4() {
+function exercise4() {}
 
-  // Your code here.
-
-}
+export { exercise1, exercise2, exercise3, exercise4 };
