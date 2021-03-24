@@ -37,7 +37,7 @@ describe("Flow Control Exercises", function() {
 
     return function() {
       it("Should call the counter function 3 times", function() {
-        spyOn(counter, "f");
+        jest.spyOn(counter, "f").mockImplementation(() => {});
         f(counter.f);
         expect(counter.f).toHaveBeenCalledTimes(3);
       });

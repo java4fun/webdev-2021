@@ -9,15 +9,25 @@ Please do ensure you have the **Pre-reqs** nad have followed the **set up instru
 
 ## Do this before day 1 of the class:
 
-1. Make sure you have [Node.js](https://nodejs.org/en/) `>=` 10
+1. This Make sure you have [Node.js](https://nodejs.org/en/) `>=` 14
 
-```
+```bash
 node --version
+```
+
+The labs require Node 14+ to ensure we can use modern, ES Modules (which remains experimental but usable in node). If you can't upgrade, use [Node Version Manager](https://github.com/nvm-sh/nvm) to install multiple versions of node side-by-side. Then switch:
+
+```bash
+nvm list
+nvm install 14
+nvm use 14
 ```
 
 2. Have an IDE ready to roll. I'll be using [VS Code](https://code.visualstudio.com/) but you can use anything, even a simple text editor.
 
-3. Follow the set up instructions below. Get it running!
+3. Have a modern browser handy. Read: Not Internet Explorer 11.
+
+4. Follow the set up instructions below. Get it running!
 
 ## Set Up Instructions
 

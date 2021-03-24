@@ -11,12 +11,12 @@ describe("testing time-based logic", function() {
   let timedFunction;
 
   beforeEach(function() {
-    timedFunction = jasmine.createSpy("timedFunction");
-    jasmine.clock().install();
+    timedFunction = jest.fn();
+    jest.useFakeTimers();
   });
 
   afterEach(function() {
-    jasmine.clock().uninstall();
+    jest.useRealTimers();
   });
   // :>>
 
@@ -28,7 +28,7 @@ describe("testing time-based logic", function() {
     expect(timedFunction).not.toHaveBeenCalled();
 
     // Move the clock forward and trigger timeout:
-    jasmine.clock().tick(5001);
+    jest.advanceTimersByTime(5001);
 
     // Now it's been called:
     expect(timedFunction).toHaveBeenCalled();
@@ -43,10 +43,10 @@ describe("testing time-based logic", function() {
     expect(timedFunction).not.toHaveBeenCalled();
 
     // Move the clock forward a bunch of times:
-    for (let i=0; i<10; ++i) jasmine.clock().tick(5001);
+    for (let i=0; i<10; ++i) jest.advanceTimersByTime(5001);
 
     // It should have been called 10 times:
-    expect(timedFunction.calls.count()).toEqual(10);
+    expect(timedFunction.mock.calls.length).toEqual(10);
   });
   // :>>
 });

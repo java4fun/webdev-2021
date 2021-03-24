@@ -16,7 +16,3 @@ function getCurrentName() {
 }
 
 export { promptUserForName, getCurrentName };
-
-// somewhere else...
-// import {promptUserForName) from './index.esm.js';
-// promptUserForName();

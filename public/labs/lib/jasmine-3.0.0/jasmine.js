@@ -3644,16 +3644,16 @@ getJasmineRequireObj().toHaveBeenCalledBefore = function(j$) {
 
         var result = { pass: false };
 
-        if (!firstSpy.calls.count()) {
+        if (!firstSpy.mock.calls.length) {
           result.message = 'Expected spy ' +  firstSpy.and.identity + ' to have been called.';
           return result;
         }
-        if (!latterSpy.calls.count()) {
+        if (!latterSpy.mock.calls.length) {
           result.message = 'Expected spy ' +  latterSpy.and.identity + ' to have been called.';
           return result;
         }
 
-        var latest1stSpyCall = firstSpy.calls.mostRecent().invocationOrder;
+        var latest1stSpyCall = firstSpy.mock.calls[firstSpy.mock.calls.length - 1].invocationOrder;
         var first2ndSpyCall = latterSpy.calls.first().invocationOrder;
 
         result.pass = latest1stSpyCall < first2ndSpyCall;
@@ -3662,7 +3662,7 @@ getJasmineRequireObj().toHaveBeenCalledBefore = function(j$) {
           result.message = 'Expected spy ' + firstSpy.and.identity + ' to not have been called before spy ' + latterSpy.and.identity + ', but it was';
         } else {
           var first1stSpyCall = firstSpy.calls.first().invocationOrder;
-          var latest2ndSpyCall = latterSpy.calls.mostRecent().invocationOrder;
+          var latest2ndSpyCall = latterSpy.mock.calls[latterSpy.mock.calls.length - 1].invocationOrder;
 
           if(first1stSpyCall < first2ndSpyCall) {
             result.message = 'Expected latest call to spy ' + firstSpy.and.identity + ' to have been called before first call to spy ' + latterSpy.and.identity + ' (no interleaved calls)';
@@ -3708,7 +3708,7 @@ getJasmineRequireObj().toHaveBeenCalledTimes = function(j$) {
         }
 
         actual = args[0];
-        var calls = actual.calls.count();
+        var calls = actual.mock.calls.length;
         var timesMessage = expected === 1 ? 'once' : expected + ' times';
         result.pass = calls === expected;
         result.message = result.pass ?

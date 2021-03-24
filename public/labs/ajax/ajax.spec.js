@@ -5,11 +5,11 @@ describe("Ajax", function() {
 
   // Install mock fetch API:
   beforeEach(function() {
-    spyOn(window, 'fetch').and.callFake(function(url, options={}) {
+    jest.spyOn(window, 'fetch').mockImplementation(function(url, options={}) {
       let json = () => Promise.resolve({url, options});
       response = {json, ok: true, status: 200};
 
-      spyOn(response, "json").and.callThrough();
+      jest.spyOn(response, "json");
       return Promise.resolve(response);
     });
   });

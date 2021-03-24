@@ -27,8 +27,8 @@ describe("Hosts", function () {
 
     expect(Array.isArray(result)).toBe(true);
     expect(result.length).toBe(2);
-    expect(result).toEqual(jasmine.arrayContaining(["192.168.1.2"]));
-    expect(result).toEqual(jasmine.arrayContaining(["192.168.1.3"]));
+    expect(result).toEqual(expect.arrayContaining(["192.168.1.2"]));
+    expect(result).toEqual(expect.arrayContaining(["192.168.1.3"]));
   });
 
   /****************************************************************************/
@@ -45,8 +45,8 @@ describe("Hosts", function () {
 
     expect(Array.isArray(result)).toBe(true);
     expect(result.length).toBe(2);
-    expect(result).toEqual(jasmine.arrayContaining(["localhost"]));
-    expect(result).toEqual(jasmine.arrayContaining(["myname"]));
+    expect(result).toEqual(expect.arrayContaining(["localhost"]));
+    expect(result).toEqual(expect.arrayContaining(["myname"]));
   });
 
   /****************************************************************************/
@@ -56,7 +56,7 @@ describe("Hosts", function () {
 
     if ("length" in Hosts) names.push("length");
     expect(keys.length).toBe(names.length);
-    expect(keys).toEqual(jasmine.arrayContaining(names));
+    expect(keys).toEqual(expect.arrayContaining(names));
   });
 
   /****************************************************************************/

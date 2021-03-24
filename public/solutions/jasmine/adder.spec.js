@@ -49,7 +49,7 @@ describe("Jasmine Exercises 1 and 2", function () {
     // and confirm that the `foundOdd' method is also called.
     it("should log odd sums", function () {
       let adder = new WeirdAdder();
-      spyOn(adder, 'foundOdd').and.callThrough();
+      jest.spyOn(adder, 'foundOdd');
       adder.add(0, 1);
       expect(adder.foundOdd).toHaveBeenCalledWith(1);
 

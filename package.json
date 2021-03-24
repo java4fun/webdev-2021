@@ -4,7 +4,8 @@
   "description": "Training materials for learning CSS, HTML and JS",
   "main": "www/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
     "babel": "babel src/babel --out-dir babel-out --presets=@babel/env",
     "start:chat": "node bin/chat-server.js",
     "start:help": "bash --rcfile ./.bashrc && echo \"Run ctrl+a then k to exit\"",
@@ -12,7 +13,7 @@
     "start": "json-server --watch data/db.json"
   },
   "engines": {
-    "node": ">=10",
+    "node": ">=14",
     "npm": ">=6"
   },
   "dependencies": {},
@@ -25,11 +26,13 @@
   "bugs": {
     "url": "https://github.com/rm-training/webdev-2021/issues"
   },
+  "type": "module",
   "homepage": "https://github.com/rm-training/webdev-2021",
   "devDependencies": {
     "eslint": "^7.18.0",
     "jest": "^26.6.3",
     "json-server": "^0.16.3",
+    "prettier": "^2.2.1",
     "stmux": "^1.8.1",
     "ws": "^6.2.1"
   }
