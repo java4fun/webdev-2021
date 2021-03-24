@@ -27,3 +27,9 @@
  *                // Stack is now empty.
  *   c.get();     // returns 20
  */
+
+// @todo define your constructor function
+
+// @todo add "shared/inherited" functionality by augmenting the constructor's prototype
+
+// @todo export something

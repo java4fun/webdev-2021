@@ -1,3 +1,6 @@
+import Calculator from "./index.js";
+//import Calculator from "./index-as-class.js";
+
 describe("Constructor Functions Exercise", function () {
   it("Should provide a Calculator function", function () {
     expect(typeof Calculator).toBe("function");

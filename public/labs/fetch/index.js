@@ -13,23 +13,6 @@
 //
 //   http://localhost:3000/js/fetch/
 //
-async function getArtists(id) {
-  try {
-    let path = "/artists";
-    if (id) {
-      path += "/" + id;
-    }
+function getArtists(id) {}
 
-    // the "initial request" promise -- resolves to a Response object
-    const response = await fetch(path);
-    const json = await response.json();
-
-    // do something with the json
-
-    return json;
-  } catch (e) {
-    // Ill catch rejections here...
-  }
-}
-
-const artistsPromise = getArtists(5);
+export { getArtists };

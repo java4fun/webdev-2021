@@ -9,12 +9,33 @@
 // Your function should fetch the JSON payload from the server,
 // returning a Promise that resolves to the deserialized JSON data.
 //
-// The API is available at http://localhost:3000/artists
-//
 // To run your tests or debug, start your server and go to:
 //
-//   http://localhost:3000/labs/fetch/
+//   http://localhost:3000/js/fetch/
 //
 function getArtists(id) {
-  // Your code goes here.
+  let path = "/artists";
+  if (id) {
+    path += "/" + id;
+  }
+
+  // the "initial request" promise -- resolves to a Response object
+  const requestPromise = fetch(path);
+
+  const jsonPromise = requestPromise.then(
+    (response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Bad response");
+      }
+    },
+    (error) => {
+      throw new Error("Something went wrong with the request");
+    },
+  );
+
+  return jsonPromise;
 }
+
+export { getArtists };

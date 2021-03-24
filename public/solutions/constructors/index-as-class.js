@@ -34,3 +34,5 @@ class Calculator {
     return this.value;
   }
 }
+
+export default Calculator;
