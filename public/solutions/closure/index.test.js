@@ -1,11 +1,13 @@
-describe("Closure Exercise", function() {
-  it("Should return an object with two properties", function() {
+import closure from "./index.js";
+
+describe("Closure Exercise", function () {
+  it("Should return an object with two properties", function () {
     let result = closure();
     expect(result.getTemp).toBeDefined();
     expect(result.setTemp).toBeDefined();
   });
 
-  it("Should support temperature adjustment", function() {
+  it("Should support temperature adjustment", function () {
     let result = closure();
     result.setTemp(42);
     expect(result.getTemp()).toBe(42);
@@ -14,7 +16,7 @@ describe("Closure Exercise", function() {
     expect(result.getTemp()).toBe(0);
   });
 
-  it("Should keep temperature in allowed range", function() {
+  it("Should keep temperature in allowed range", function () {
     let result = closure();
     result.setTemp(50);
 
@@ -25,7 +27,7 @@ describe("Closure Exercise", function() {
     expect(result.getTemp()).toBe(50);
   });
 
-  it("Should use a unique closure", function() {
+  it("Should use a unique closure", function () {
     let resultA = closure();
     let resultB = closure();
 

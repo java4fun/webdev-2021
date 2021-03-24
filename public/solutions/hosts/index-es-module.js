@@ -28,4 +28,20 @@ const clear = () => {
   hosts = {};
 };
 
-export { add, lookupByName, lookupByIP, clear };
+const getLength = () => {
+  return Object.keys(hosts).length;
+};
+
+// default export, just a single object here... getter works fine
+export default {
+  add,
+  lookupByName,
+  lookupByIP,
+  clear,
+  get length() {
+    return getLength();
+  },
+};
+
+// named exports, getter isn't possible
+export { add, lookupByIP, lookupByName, clear, getLength };

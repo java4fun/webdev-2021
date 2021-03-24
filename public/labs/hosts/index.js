@@ -1,7 +1,12 @@
 /*
  * Hosts Exercise:
  *
- * Using an IIFE, change the `Hosts' variable below so that it becomes
+ * We're going to build a basic IIFE module and then upgrade it (later) to be a more
+ * modern ES Module with a flexible API.
+ *
+ * First...
+ *
+ * Using an IIFE, change the `Hosts' variable below so that it references
  * an object.  The object should have four (4) properties that are all
  * functions:
  *
@@ -28,10 +33,10 @@
  * Notes:
  *
  *  - Do not introduce any new global variables.  The `Hosts` variable
- *    is the only allowed global variable.
- *
- *  - Look at the spec file for clarification of the requirements
- *    listed above.  The spec file is: hosts.spec.js
+ *    is the only allowed global variable. We're actually leveraging a modern module here
+ *    by using `export` so we're not mucking with a real global scope regardless. However
+ *    I want you to experience this limitation because that is a better representation
+ *    of developing "old world" modules for the web.
  *
  *  - Consider how you want to store your data...
  *  	* An Object?
@@ -42,15 +47,30 @@
  *
  * Bonus Exercise:
  *
- * When your tests are passing, try adding the following
- * functionality:
+ * Make it so a user of your module can get the "length" of the host names currently being stored.
+ * If we add three host names, then:
+ *   Hosts.length; // 3
  *
- * Using the `Object.defineProperty' function, add a new property to
- * the API called `length'.  The `length' property should be dynamic
- * and should equal the total number of host names stored in the
- * `Hosts' object.  This property SHOULD NOT be a function, and it
- * must be enumerable.  (Hint: look at the `get' property descriptor.)
+ * You can do this either by:
+ * - using `Object.defineProperty`
+ *      see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+ * - defining a `getter` on the object that you are returning to the user of your module
+ *      see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get
  *
- * Make sure your tests still pass.
+ * For Later...
+ *
+ * You're providing a single object as the interface into this module, however it would be more flexible if you
+ * were to allow a user of your module to leverage specific functions as needed, ex:
+ *
+ * import Hosts from './index.js';
+ * Hosts.clear();
+ * // vs
+ * import {clear} from './index.js';
+ * clear();
+ *
+ * Can you update your module to provide this more flexible interface?
+ *
  */
 const Hosts = undefined;
+
+export default Hosts;

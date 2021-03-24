@@ -18,6 +18,10 @@ describe("Array Exercises", function () {
   describe("Exercise 1", function () {
     let result = Labs.exercise1();
 
+    it("Return something", function () {
+      expect(result).not.toBeUndefined();
+    });
+
     if (result !== undefined) {
       it("Should return an array with one element", function () {
         expect(Array.isArray(result)).toBe(true);
@@ -34,6 +38,10 @@ describe("Array Exercises", function () {
   describe("Exercise 2", function () {
     let result = Labs.exercise2();
 
+    it("Return something", function () {
+      expect(result).not.toBeUndefined();
+    });
+
     if (result !== undefined) {
       it("Should return an array of 4 strings", function () {
         expect(Array.isArray(result)).toBe(true);
@@ -46,6 +54,10 @@ describe("Array Exercises", function () {
   describe("Exercise 3 (Bonus)", function () {
     let result = Labs.exercise3();
 
+    it("Return something", function () {
+      expect(result).not.toBeUndefined();
+    });
+
     if (result !== undefined) {
       it("Should return an array of 1 element", function () {
         expect(Array.isArray(result)).toBe(true);
@@ -57,6 +69,10 @@ describe("Array Exercises", function () {
 
   describe("Exercise 4 (Bonus)", function () {
     let result = Labs.exercise4();
+
+    it("Return something", function () {
+      expect(result).not.toBeUndefined();
+    });
 
     if (result !== undefined) {
       it("Should return an array of 4 elements", function () {
