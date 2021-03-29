@@ -59,6 +59,7 @@
 
 const bucket = document.getElementById("bucket");
 const bucketList = bucket.querySelector("ul");
+let newLi;
 
 const flag1 = document.querySelector(".main li.foo");
 // the flag is already an LI so we do not need to recreate it...
@@ -99,7 +100,7 @@ q.push(document);
 while (q.length) {
   const next = q.pop();
 
-  Array.from(next.children).map(el => {
+  Array.from(next.children).map((el) => {
     if (el.innerText.match(/flag #/i)) {
       if (el.children.length) {
         q.push(el);
