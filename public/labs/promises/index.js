@@ -35,14 +35,7 @@ function delayedFn(
 }
 
 function delayedFnWithPromises(fn, delayInMs = 0) {
-  return new Promise((resolve, reject) => {
-    if (delayInMs < 0) {
-      reject(new Error("Delay is out of bounds"));
-    }
-    setTimeout(() => {
-      resolve(fn());
-    }, delayInMs);
-  });
+  // @todo - implement me
 }
 
 export default delayedFn;

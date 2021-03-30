@@ -37,7 +37,7 @@ class MessageSystem {
   }
 
   constructor(host) {
-    const connection = new WebSocket("ws://" + host);
+    const connection = new WebSocket("wss://" + host);
 
     // form
     this.form = document.querySelector("form");
@@ -59,8 +59,15 @@ class MessageSystem {
 
     connection.addEventListener("message", (e) => {
       const data = JSON.parse(e.data);
-      console.log(data);
-      //this.addMessage(data);
+      this.addMessage(data);
+    });
+
+    connection.addEventListener("close", (e) => {
+      console.log("Connection lost", closed, e.code, e.reason);
+    });
+
+    connection.addEventListener("error", (e) => {
+      console.log("Error", e);
     });
 
     this.form.addEventListener("submit", (e) => {
@@ -82,9 +89,4 @@ class MessageSystem {
   }
 }
 
-//const messages = new MessageSystem("localhost:3030");
-
-const messages = new MessageSystem(
-  "happy-family-chat-time.herokuapp.com/?token=woops",
-  "Ryan"
-);
+export default MessageSystem;
