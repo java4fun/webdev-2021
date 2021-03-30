@@ -1,7 +1,7 @@
 /******************************************************************************/
 // Spy on the Ajax library, stubbing out one of its methods.
 ajaxSpy = function(method, result, error) {
-  spyOn(Ajax, method).and.callFake(function() {
+  jest.spyOn(Ajax, method).mockImplementation(function() {
     if (error === undefined) {
       return Promise.resolve(result);
     } else {

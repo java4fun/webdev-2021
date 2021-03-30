@@ -6,6 +6,15 @@
   <meta charset="utf8" />
   <link href="/vendor/semantic-ui/semantic.css" rel="stylesheet" type="text/css" />
 
+  <script type="module">
+    import MessageSystem from './index.js';
+
+    const messages = new MessageSystem(
+      "happy-family-chat-time.herokuapp.com/?token=woops",
+      "Ryan",
+    );
+  </script>
+
   <style type="text/css">
     #messages {
       margin: 1rem 0;
@@ -56,9 +65,6 @@
       </li>
     </ul>
   </div>
-
-  <!-- Bring in our JavaScript files -->
-  <script src="./index.js"></script>
 </body>
 
 </html>

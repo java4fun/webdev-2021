@@ -2,9 +2,9 @@ const myLib = {
   callCount: 0,
   name: undefined,
   promptUserForName() {
-    this.callCount++;
+    this.mock.calls.length++;
 
-    if (this.callCount > 1) {
+    if (this.mock.calls.length > 1) {
       return;
     }
 

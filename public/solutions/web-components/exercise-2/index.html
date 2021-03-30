@@ -1,0 +1,49 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <title>Targeted Topics - Web Components</title>
+    <meta charset="utf8" />
+    <link href="/vendor/semantic-ui/semantic.min.css" rel="stylesheet" type="text/css" />
+    <script type="module" src="./index.js"></script>
+</head>
+
+<body class="ui container">
+    <h1>Exercise 2</h1>
+
+    <p>Create a "joke-machine" Web Component</p>
+
+    <p>Our joke-machine element will render out a random joke from an internal list of 3-5 jokes</p>
+
+    <p>Need joke ideas? See https://icanhazdadjoke.com/</p>
+
+    <ol>
+        <li>Improve your web component by using a template to define the paragraph and button</li>
+        <li>It should accepts at least one "slot", such as the button label or a header</li>
+        <li>Update the custom element class to use your template</li>
+        <li>Bonus: Improve my custom element by registering the handler only once the node is connected to the DOM</li>
+        <li>Bonus 2: Can you get the original jokes passing as an attribute?</li>
+    </ol>
+
+    <div class="ui segment">
+        <joke-machine></joke-machine>
+    </div>
+
+    <div class="ui segment">
+        <joke-machine jokes="a joke, b joke, c joke">
+            <span slot="button-label">Custom Button</span>
+        </joke-machine>
+    </div>
+
+    <template id="joke-template">
+        <!-- note: I had to link to my same style sheet to get .ui.button working -->
+        <link href="/vendor/semantic-ui/semantic.min.css" rel="stylesheet" type="text/css" />
+        <p></p>
+        <button class="ui button">
+            <slot name="button-label">Default Click Label</slot>
+        </button>
+    </template>
+
+</body>
+
+</html>

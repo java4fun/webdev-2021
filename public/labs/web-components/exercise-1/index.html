@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <title>Targeted Topics - Web Components</title>
+  <meta charset="utf8" />
+  <link href="/vendor/semantic-ui/semantic.min.css" rel="stylesheet" type="text/css" />
+  <script type="module" src="./index.js"></script>
+</head>
+
+<body class="ui container">
+  <h1>Exercise 1</h1>
+
+  <p>Create a "joke-machine" Web Component</p>
+
+  <p>Our joke-machine element will render out a random joke from an internal list of 3-5 jokes</p>
+
+  <p>Need joke ideas? See https://icanhazdadjoke.com/</p>
+
+  <ol>
+    <li>The element will randomly display a joke (in a &lt;p&gt; tag) from the array</li>
+    <li>Use a shadow dom to encapsulate your content</li>
+    <li>Don't forget to register your custom element</li>
+    <li>Bonus: Add a button next to the joke which changes the joke when a user clicks it (el.addEventListener)</li>
+  </ol>
+
+  <div class="ui segment">
+    <joke-machine></joke-machine>
+  </div>
+
+</body>
+
+</html>

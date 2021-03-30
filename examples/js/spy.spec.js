@@ -11,7 +11,7 @@ describe("a function", function() {
 
   // <<: call
   it("should be called", function() {
-    spyOn(foo, 'plusOne');
+    jest.spyOn(foo, 'plusOne').mockImplementation(() => {});
     let x = foo.plusOne(42);
 
     expect(foo.plusOne).toHaveBeenCalled();
@@ -24,7 +24,7 @@ describe("a function", function() {
 
   // <<: callThrough
   it("should call through and execute", function() {
-    spyOn(foo, 'plusOne').and.callThrough();
+    jest.spyOn(foo, 'plusOne');
     let x = foo.plusOne(42);
 
     expect(foo.plusOne).toHaveBeenCalled();
@@ -34,7 +34,7 @@ describe("a function", function() {
 
   // <<: callFake
   it("should call a fake implementation", function() {
-    spyOn(foo, 'plusOne').and.callFake(n => n + 2);
+    jest.spyOn(foo, 'plusOne').mockImplementation(n => n + 2);
     let x = foo.plusOne(42);
 
     expect(foo.plusOne).toHaveBeenCalled();

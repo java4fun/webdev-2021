@@ -1,0 +1,41 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <title>Targeted Topics - Web Components</title>
+  <meta charset="utf8" />
+  <link href="/vendor/semantic-ui/semantic.min.css" rel="stylesheet" type="text/css" />
+  <script type="module" src="./joke-machine-fetch.js"></script>
+
+</head>
+
+<body class="ui container">
+  <h1>Exercise 1</h1>
+
+  <p>Create a "joke-machine" Web Component</p>
+
+  <p>Our joke-machine element will render out a random joke from an internal list of 3-5 jokes</p>
+
+  <p>Need joke ideas? See https://icanhazdadjoke.com/</p>
+
+  <joke-machine>
+    <div class="ui header" slot="title">Magical Jokes</div>
+  </joke-machine>
+
+  <joke-machine>
+    <div class="ui header" slot="title">Lame Jokes</div>
+  </joke-machine>
+
+  <template id="joke-machine-template">
+    <link href="/vendor/semantic-ui/semantic.css" rel="stylesheet" type="text/css" />
+
+    <div class="ui segment">
+      <slot name="title"></slot>
+      <div id="joke"></div>
+      <button class="ui button" id="new-joke">New Joke</button>
+      <button class="ui button" id="fetch-joke">Fetch</button>
+    </div>
+  </template>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Basic Demo</title>
+    <meta name="description" content="Basic Demo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/vendor/semantic-ui/semantic.css" rel="stylesheet" type="text/css" />
+
+    <script type="module">
+
+        const form = document.getElementById('myForm');
+
+        form.addEventListener('submit', (e) => {
+            const fd = new FormData(form);
+
+            console.log("Name:", fd.get("name"));
+            console.log("Email:", fd.get("name"));
+
+            fd.forEach((value, key) => console.log(`${key}: ${value}`));
+
+            for (let entry of fd) {
+                console.log('Entry', entry);
+            }
+
+            e.preventDefault();
+        })
+
+    </script>
+</head>
+
+<body class="ui container">
+    <h1>Form</h1>
+
+    <form id="myForm" class="ui form" action="#" method="POST" autocomplete="off" novalidate>
+        <div class="field">
+            <label>First Name</label>
+            <input type="text" name="first-name" placeholder="First Name">
+        </div>
+        <div class="field">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Email">
+        </div>
+        <div class="field">
+            <div class="ui checkbox">
+                <input type="checkbox" tabindex="0" class="hidden">
+                <label>I agree to the Terms and Conditions</label>
+            </div>
+        </div>
+        <button class="ui button" type="submit">Submit</button>
+    </form>
+</body>
+
+</html>

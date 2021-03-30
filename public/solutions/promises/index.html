@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test Page</title>
+    <meta charset="utf8" />
+    <link href="../core.css" rel="stylesheet" type="text/css" />
+    <link href="/vendor/semantic-ui/semantic.css" rel="stylesheet" type="text/css" />
+
+    <script type="module">
+        import delayedFn, { delayedFnWithPromises } from './index.js';
+
+        function tester() {
+            console.log('Test');
+            return 5;
+        }
+
+        // Exercise 2:
+        // Update the following code so that it supports the new delayedFnWithPromises that 
+        // returns a promise instead
+        delayedFnWithPromises(tester, 1000)
+            .then((result) => {
+                console.log("First time, I got:", result);
+                return delayedFnWithPromises(tester, 1000);
+            })
+            .then((result) => {
+                console.log("Second time, I got:", result);
+                return delayedFnWithPromises(tester, 1000);
+            }).
+            then((result) => {
+                console.log("Third time, I got:", result);
+            })
+            .catch((error) => {
+                console.log('Something went wrong', error);
+            });
+
+        // Exercise 3:
+        // Try out Promise.all
+        // You want to execute three, delayed functions, in parallel
+        // Once they are all complete, you want to execute a fourth delayed function.
+        //
+        // fn1, fn2, fn3
+        // then fn4
+        //
+        const prom1 = delayedFnWithPromises(tester, 50);
+        const prom2 = delayedFnWithPromises(tester, 200);
+        const prom3 = delayedFnWithPromises(tester, 1000);
+
+        const all = Promise.all([prom1, prom2, prom3]);
+        all.then(([result1, result2, result3]) => {
+            console.log(result1, result2, result3);
+        });
+
+
+        // just so you can test it out in your console, if you wish
+        window.delayedFn = delayedFn;
+        window.delayedFnWithPromises = delayedFnWithPromises;
+    </script>
+
+</head>
+
+<body class="ui container">
+    <div id="container">
+        <h1 class="foo ui dividing header">Test page</h1>
+    </div>
+</body>
+
+</html>

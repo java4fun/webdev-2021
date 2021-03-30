@@ -1,0 +1,34 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <title>Targeted Topics - Web Components</title>
+  <meta charset="utf8" />
+  <link href="/vendor/semantic-ui/semantic.min.css" rel="stylesheet" type="text/css" />
+  <script type="module" src="./index.js"></script>
+</head>
+
+<body class="ui container">
+  <h1>Exercise 2</h1>
+
+  <p>Improve our "joke-machine" with templates and handlers</p>
+
+  <ol>
+    <li>Create a template with a paragraph and "switch joke" button"</li>
+    <li>It should accepts at least one "slot", such as the button label</li>
+    <li>Update the custom element class to use your template</li>
+    <li>Bonus: Improve my custom element by registering the handler only once the node is connected to the DOM</li>
+    <li>Bonus 2: Can you get the original jokes passing as an attribute?</li>
+  </ol>
+
+  <joke-machine></joke-machine>
+
+  <joke-machine>
+    <span slot="label">Swap Joke</span>
+  </joke-machine>
+
+  <!-- @todo - add your <template> element here -->
+
+</body>
+
+</html>
