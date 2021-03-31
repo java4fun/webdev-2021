@@ -1,8 +1,3 @@
-// Exercise: A live chatroom!
-//
-// Utilize the premade template and websockets to build a basic chat page
-//
-//
 class MessageSystem {
   emptyMessages() {
     this.messagesUl.innerHTML = "";
@@ -58,8 +53,10 @@ class MessageSystem {
     });
 
     connection.addEventListener("message", (e) => {
-      const data = JSON.parse(e.data);
-      this.addMessage(data);
+      if (e.data.length) {
+        const data = JSON.parse(e.data);
+        this.addMessage(data);
+      }
     });
 
     connection.addEventListener("close", (e) => {
