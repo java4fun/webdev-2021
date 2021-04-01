@@ -10,7 +10,8 @@
     "start:chat": "node bin/chat-server.js",
     "start:help": "bash --rcfile ./.bashrc && echo \"Run ctrl+a then k to exit\"",
     "start:all": "stmux --mouse -w always -e ERROR -m beep,system -- [ [ \"npm start\" .. \"npm run start:chat\" ] ]",
-    "start": "json-server --watch data/db.json"
+    "start": "json-server --watch data/db.json",
+    "parcel-watch": "parcel public/solutions/fetch/index.html"
   },
   "engines": {
     "node": ">=14",

@@ -1,5 +1,5 @@
 let callCount = 0;
-let name;
+let givenName;
 
 function promptUserForName() {
   callCount++;
@@ -8,11 +8,13 @@ function promptUserForName() {
     return;
   }
 
-  name = prompt("What is your name?");
+  givenName = prompt("What is your name?");
 }
 
-function getCurrentName() {
-  alert(`The last name was: ${name}`);
+function getCurrentName(defaultName = "No One") {
+  if (givenName) {
+    alert(`The last name was: ${givenName}`);
+  } else {
+    alert(defaultName);
+  }
 }
-
-promptUserForName();
