@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/vendor/semantic-ui/semantic.css" rel="stylesheet" type="text/css" />
+
+    <script type="module" src="js/module-thingy.js"></script>
+    <script type="module" src="js/module-thingy-user.js"></script>
+
+    </script>
+
+    <script type="module">
+        import thingy from './js/module-thingy.js';
+
+        console.log(thingy.get());
+
+        setTimeout(() => {
+            console.log("What is the value now?", thingy.get());
+        }, 6000);
+    </script>
+
+</head>
+
+<body class="ui container">
+    <h1>ES Modules</h1>
+
+</body>
+
+</html>

@@ -25,7 +25,7 @@
 //
 // Bonus 2:
 // add a new method, `clear()`, that empties out the history
-//   tempThing.. clear()
+//   tempThing.clear();
 //
 function tempTracker() {}
 

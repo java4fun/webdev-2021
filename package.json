@@ -14,7 +14,7 @@
     "parcel-watch": "parcel public/solutions/fetch/index.html"
   },
   "engines": {
-    "node": ">=14",
+    "node": ">=13",
     "npm": ">=6"
   },
   "dependencies": {},

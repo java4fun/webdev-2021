@@ -56,6 +56,13 @@
  *    https://developer.mozilla.org/en-US/docs/Web/API/Node
  *
  *
+ */
+
+function findTheFlags() {
+  // @todo - set up your DOM selection & manipulation here
+}
+
+/**
  * BONUS:
  *
  * Rewrite your solution.  This time instead of selecting each flag
@@ -63,5 +70,7 @@
  * and moves the flags as they are found.  Don't forget to sort the
  * flags so they are in the correct order in the bucket.
  */
+function bonus() {}
 
-// Your code here.
+export default findTheFlags;
+export { bonus };

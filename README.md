@@ -86,6 +86,10 @@ npm run start:chat
 
 # Credits
 
-- [jmcneese](https://github.com/jmcneese)
+Author: [mrmorris](https://github.com/mrmorris)
+
+Based on materials previously created by:
+
 - [mrmorris](https://github.com/mrmorris)
+- [jmcneese](https://github.com/jmcneese)
 - [pjones](http://www.devalot.com/about/pjones.html)
