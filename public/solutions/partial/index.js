@@ -8,7 +8,7 @@ Function.prototype.curry = function () {
     var currying = this;
     return function (...callerArgs) {
       return originalFunction.apply(currying, [].concat(curryArgs, callerArgs));
-    }
+    };
   };
 };
 

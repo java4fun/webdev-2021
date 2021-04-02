@@ -13,11 +13,19 @@ describe("WeirdAdder", function () {
   // Write a test that verifies that the `add' method of the
   // `WeirdAdder' class correctly sums and returns its two
   // arguments.
-  test("should return the sum of two arguments", function () {});
 
   // Exercise 2:
   //
-  // Use a spy, write a test that calls the `add' method
+  // Using a spy, write a test that calls the `add' method
   // and confirm that the `foundOdd' method is also called.
-  test("should log odd sums", function () {});
+
+  // Exercise 3:
+  //
+  // Verify that the `render()` function will add an H1 to
+  // the document
+
+  // Bonus - Exercise 4:
+  //
+  // Verify that the `render()` function sets a custom click
+  // handler on the h1 it renders
 });

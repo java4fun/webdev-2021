@@ -37,4 +37,29 @@ describe("WeirdAdder", function () {
     adder.add(0, 1);
     expect(console.log).toHaveBeenCalledTimes(1);
   });
+
+  test("should render an h1", function () {
+    let adder = new WeirdAdder();
+
+    document.body.innerHTML = `<div>Nothing to see here, folks</div>`;
+
+    expect(document.querySelectorAll("h1").length).toEqual(0);
+    adder.render();
+    expect(document.querySelectorAll("h1").length).toEqual(1);
+  });
+
+  test("should trigger a click handler", function () {
+    const adder = new WeirdAdder();
+    const mock = jest.fn();
+
+    document.body.innerHTML = `<div>Nothing to see here, folks</div>`;
+
+    adder.render(mock);
+
+    const h1 = document.querySelector("h1");
+    const event = new MouseEvent("click");
+    h1.dispatchEvent(event);
+
+    expect(mock).toHaveBeenCalledTimes(1);
+  });
 });

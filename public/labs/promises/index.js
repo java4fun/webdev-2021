@@ -35,7 +35,7 @@ function delayedFn(
 }
 
 function delayedFnWithPromises(fn, delayInMs = 0) {
-  // @todo - implement me
+  // @todo - implement me for exercise 1
 }
 
 export default delayedFn;

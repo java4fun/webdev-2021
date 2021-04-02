@@ -14,6 +14,13 @@ class WeirdAdder {
     console.log(`${n} is odd`);
     return n;
   }
+
+  render(eventHandler = () => {}) {
+    const newH1 = document.createElement("h1");
+    newH1.innerHTML = "Weird Adder Result";
+    newH1.addEventListener("click", eventHandler);
+    document.body.appendChild(newH1);
+  }
 }
 
 class DelayedAdder {

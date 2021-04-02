@@ -1,9 +1,12 @@
-/******************************************************************************/
-describe("Partial Function Application", function() {
+import "./index.js";
 
+/******************************************************************************/
+describe("Partial Function Application", function () {
   /****************************************************************************/
-  it("should allow partial function application", function() {
-    let f = function(x, y, z) { return [x, y, z]; };
+  it("should allow partial function application", function () {
+    let f = function (x, y, z) {
+      return [x, y, z];
+    };
 
     let g = f.curry();
     expect(typeof g).toBe("function");
@@ -17,14 +20,14 @@ describe("Partial Function Application", function() {
   });
 
   /****************************************************************************/
-  it("should pass `this' through", function() {
+  it("should pass `this' through", function () {
     // <<: obj.add
     let obj = {
       magnitude: 10,
 
-      add: function(x, y) {
+      add: function (x, y) {
         return (x + y) * this.magnitude;
-      }.curry()
+      }.curry(),
     };
     // :>>
 

@@ -17,7 +17,6 @@
     "node": ">=13",
     "npm": ">=6"
   },
-  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rm-training/webdev-2021.git"

@@ -41,3 +41,12 @@ it("promise should reject if I give invalid timer value", () => {
 
   return expect(result).rejects.toThrow(new Error("Delay is out of bounds"));
 });
+
+it("promise should not run the function if it rejects", () => {
+  const mockFn = jest.fn(() => 5);
+
+  const result = delayedFnWithPromises(mockFn, -500);
+  jest.advanceTimersByTime(500);
+
+  return expect(mockFn).toHaveBeenCalledTimes(0);
+});

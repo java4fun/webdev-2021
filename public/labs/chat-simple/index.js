@@ -42,4 +42,17 @@
  * }
  *
  *
+ * Need help getting started?
+ * Make a checklist:
+ * [] Open a connection to the web socket server
+ * [] When a user submits the form, you'll send a message to the chat server
+ *  - listen to the submit event
+ *  - get data from the form (FormData?)
+ *  - Send the message to the Web Socket server
+ *  - empty out the form data
+ * [] When the chat server responds with a message, you'll render it in the list of messages on the page
+ *  - listen to message event
+ *  - render a new message <div> in the page when you get one
+ * [] Extra: Prevent a user from submitting the form empty
+ * [] extra: Consider how to handle templating the messages you want to render
  */

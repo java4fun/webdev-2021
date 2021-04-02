@@ -10,6 +10,7 @@
     <script type="module">
         import delayedFn, { delayedFnWithPromises } from './index.js';
 
+        // this is just a test function to pass in to the delayed functions (you can also write your own)
         function tester() {
             console.log('Test');
             return 5;
@@ -18,6 +19,7 @@
         // Exercise 2:
         // Update the following code so that it supports the new delayedFnWithPromises that 
         // returns a promise instead
+        //
         // @todo - implement exercise 2
         delayedFn(tester, 1000, (result) => {
             console.log("First time, I got:", result);

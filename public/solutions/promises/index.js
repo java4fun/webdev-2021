@@ -38,6 +38,7 @@ function delayedFnWithPromises(fn, delayInMs = 0) {
   return new Promise((resolve, reject) => {
     if (delayInMs < 0) {
       reject(new Error("Delay is out of bounds"));
+      return;
     }
     setTimeout(() => {
       resolve(fn());
